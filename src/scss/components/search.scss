@@ -1,0 +1,43 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.search {
+  @include flex(center, null);
+  width: 100%;
+  max-width: rem(280px);
+  height: rem(36px);
+
+  input {
+    flex: 1;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(153, 149, 166, 0.25);
+    border-radius: 4px 0 0 4px;
+    padding: 0 rem(16px);
+    color: $white;
+    font-family: 'Atyp BL Text', sans-serif;
+    transition: border 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      border: 1px solid $pink;
+    }
+  }
+
+  button {
+    @include flex(center, center);
+    @include size(rem(36px));
+
+    background-color: $pink;
+    border-radius: 4px;
+    margin-left: rem(-5px);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+}

@@ -1,0 +1,121 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.card-podcast {
+  width: 100%;
+  max-width: rem(280px);
+  display: block;
+  position: relative;
+  height: rem(420px);
+  overflow: hidden;
+
+  &:hover {
+    .image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    .info {
+      bottom: rem(40px);
+
+      .play {
+        opacity: 1;
+      }
+    }
+  }
+
+  .image {
+    @include size(100%);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+
+    &:after {
+      content: '';
+      @include size(100%);
+      background: linear-gradient(
+        180deg,
+        rgba(5, 1, 16, 0.1) 45.77%,
+        #050110 70.06%
+      );
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    img {
+      @include size(100%);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 rem(24px);
+    z-index: 1;
+    transition: bottom 0.3s ease;
+
+    .time {
+      @include flex(center, null);
+      margin-bottom: rem(8px);
+
+      .tag-ep {
+        display: inline-block;
+        padding: rem(6px) rem(10px);
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(32px);
+        border-radius: 80px;
+        font-size: rem(13px);
+        font-weight: 600;
+        line-height: 105%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $pink;
+        margin-right: rem(16px);
+      }
+
+      .read {
+        @include flex(center, null);
+
+        span {
+          font-size: rem(13px);
+          line-height: 150%;
+          color: rgba(255, 255, 255, 0.7);
+          margin-left: rem(8px);
+        }
+      }
+    }
+
+    .play {
+      @include flex(center, null);
+      margin-top: rem(16px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      span {
+        font-size: rem(14px);
+        font-weight: 600;
+        line-height: 120%;
+        color: $pink;
+        margin-left: rem(8px);
+      }
+    }
+  }
+
+  @media (max-width: 1150px) {
+    max-width: 100%;
+
+    .info {
+      bottom: rem(40px);
+
+      .play {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Atyp BL Text', sans-serif;
+  font-size: rem(10px);
+  background-color: $gray-scale-01;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+section {
+  @media (max-width: 1200px) {
+    padding: rem(60px) 0px !important;
+  }
+
+  @media (max-width: 768px) {
+    padding: rem(50px) 0 !important;
+  }
+
+  @media (max-width: 560px) {
+    padding: rem(40px) 0px !important;
+  }
+}

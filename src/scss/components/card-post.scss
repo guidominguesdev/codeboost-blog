@@ -1,0 +1,269 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.card-post-lg {
+  display: block;
+  width: 100%;
+  max-width: rem(728px);
+
+  &:hover {
+    .image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    .info {
+      h3 {
+        color: $pink;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+    height: rem(320px);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: rem(35px);
+
+    img {
+      @include size(100%);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .info {
+    .top-info {
+      @include flex(center, space-between);
+      margin-bottom: rem(16px);
+
+      ul {
+        @include flex(center, null);
+        list-style-type: none;
+
+        li {
+          @include flex(center, null);
+          position: relative;
+
+          &:not(:first-child) {
+            margin-left: rem(40px);
+
+            &:after {
+              content: '';
+              @include size(rem(6px));
+              background-color: #393c40;
+              position: absolute;
+              border-radius: 50%;
+              left: rem(-20px);
+            }
+          }
+
+          span {
+            font-size: rem(14px);
+            line-height: 150%;
+            color: $gray-scale-05;
+            margin-left: rem(8px);
+          }
+        }
+      }
+    }
+
+    h3 {
+      max-width: 95%;
+      transition: color 0.3s ease;
+    }
+  }
+
+  @media (max-width: 568px) {
+    .image {
+      height: rem(200px);
+      margin-bottom: rem(20px);
+    }
+
+    .info {
+      .top-info {
+        justify-content: center;
+
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.card-post-xs {
+  @include flex(center, null);
+  width: 100%;
+  max-width: rem(384px);
+  height: rem(104px);
+
+  &:hover {
+    .image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    .info {
+      h6 {
+        color: $pink;
+      }
+    }
+  }
+
+  .image {
+    @include size(rem(104px));
+
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      @include size(100%);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .info {
+    flex: 1;
+    margin-left: rem(32px);
+
+    h6 {
+      margin-top: rem(12px);
+      margin-bottom: rem(5px);
+      transition: color 0.3s ease;
+    }
+
+    ul {
+      @include flex(center, null);
+      list-style-type: none;
+
+      li {
+        @include flex(center, null);
+        position: relative;
+
+        &:not(:first-child) {
+          margin-left: rem(24px);
+
+          &:after {
+            content: '';
+            @include size(rem(6px));
+            background-color: #393c40;
+            position: absolute;
+            border-radius: 50%;
+            left: rem(-15px);
+          }
+        }
+
+        span {
+          font-size: rem(14px);
+          line-height: 150%;
+          color: $gray-scale-05;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    justify-content: center;
+
+    .info {
+      flex: initial;
+    }
+  }
+  @media (max-width: 560px) {
+    .info {
+      flex: 1;
+    }
+  }
+}
+
+.card-post-default {
+  display: block;
+  width: 100%;
+  max-width: rem(384px);
+
+  &:hover {
+    .image {
+      img {
+        transform: scale(1.05);
+      }
+    }
+
+    .info {
+      h6 {
+        color: $pink;
+      }
+    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: rem(200px);
+    border-radius: 8px;
+    margin-bottom: rem(16px);
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      @include size(100%);
+      background: linear-gradient(
+        180deg,
+        rgba(15, 17, 22, 0.025) 45.77%,
+        rgba(11, 8, 20, 0.25) 92.14%
+      );
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    img {
+      @include size(100%);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .info {
+    h6 {
+      margin-top: rem(8px);
+      margin-bottom: rem(5px);
+      transition: color 0.3s ease;
+    }
+
+    ul {
+      @include flex(center, null);
+      list-style-type: none;
+
+      li {
+        @include flex(center, null);
+        position: relative;
+
+        &:not(:first-child) {
+          margin-left: rem(24px);
+
+          &:after {
+            content: '';
+            @include size(rem(6px));
+            background-color: #393c40;
+            position: absolute;
+            border-radius: 50%;
+            left: rem(-15px);
+          }
+        }
+
+        span {
+          font-size: rem(14px);
+          line-height: 150%;
+          color: $gray-scale-05;
+        }
+      }
+    }
+  }
+}

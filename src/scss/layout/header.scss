@@ -1,0 +1,147 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+header {
+  @include flex(center, null);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: rem(80px);
+  background-color: rgba(15, 12, 27, 0.5);
+  backdrop-filter: blur(40px);
+  z-index: 2022;
+
+  .container {
+    @include flex(center, space-between);
+  }
+
+  .hamburger {
+    margin-left: rem(20px);
+    display: none;
+
+    &.is-active {
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: $white;
+      }
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+      background-color: $white;
+    }
+  }
+
+  .menu-mobile {
+    position: absolute;
+    top: rem(80px);
+    width: 100%;
+    height: calc(100vh - rem(80px));
+    background-color: #0a0615;
+    padding: rem(40px) rem(15px);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    ul {
+      @include flex-col(center, null);
+      margin-bottom: rem(40px);
+
+      li {
+        .item-categorie {
+          @include py(rem(20px));
+
+          img {
+            width: rem(32px);
+          }
+
+          span {
+            font-size: rem(20px);
+          }
+        }
+      }
+    }
+
+    .search {
+      max-width: 100%;
+      height: rem(60px);
+
+      input {
+        font-size: rem(16px);
+      }
+
+      button {
+        @include size(rem(60px));
+
+        img {
+          width: rem(24px);
+        }
+      }
+    }
+  }
+
+  nav {
+    @include flex(center, space-between);
+    flex: 1;
+    max-width: rem(832px);
+
+    ul {
+      @include flex(center, null);
+
+      li {
+        &:not(:first-child) {
+          margin-left: rem(64px);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    nav {
+      max-width: 75%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .hamburger {
+      display: block;
+    }
+
+    nav {
+      max-width: 100%;
+      justify-content: flex-end;
+
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 560px) {
+    .logo {
+      max-width: rem(130px);
+    }
+
+    nav {
+      .search {
+        display: none;
+      }
+
+      .hamburger {
+        margin-left: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.menu-opened {
+  header {
+    .menu-mobile {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}

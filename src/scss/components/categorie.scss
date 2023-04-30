@@ -1,0 +1,11 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.categorie {
+  font-size: rem(14px);
+  font-weight: 600;
+  line-height: 105%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $pink;
+}

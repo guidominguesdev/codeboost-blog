@@ -1,0 +1,22 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.item-categorie {
+  @include flex(center, null);
+
+  &:hover {
+    span {
+      color: $pink;
+    }
+  }
+
+  span {
+    font-weight: 400;
+    font-size: rem(14px);
+    line-height: 150%;
+    color: $white;
+    margin-left: rem(8px);
+    transition: color 0.3s ease;
+    opacity: 0.7;
+  }
+}

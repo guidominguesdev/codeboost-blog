@@ -1,0 +1,60 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+h1 {
+  font-size: rem(40px);
+}
+
+h2 {
+  font-size: rem(32px);
+}
+
+h3 {
+  font-size: rem(28px);
+}
+
+h4 {
+  font-size: rem(24px);
+}
+
+h5 {
+  font-size: rem(20px);
+}
+
+h6 {
+  font-size: rem(18px);
+}
+
+p {
+  font-size: rem(18px);
+}
+
+a {
+  font-size: rem(18px);
+  font-weight: 600;
+  color: $purple;
+}
+
+ul {
+  li {
+    font-size: rem(18px);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Atyp BL Text', sans-serif;
+  font-weight: 600;
+  color: $gray-scale-01;
+  color: $white;
+}
+
+p,
+li {
+  font-weight: 400;
+  color: $gray-scale-03;
+}

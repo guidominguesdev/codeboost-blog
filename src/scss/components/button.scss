@@ -1,0 +1,19 @@
+@use 'abstracts' as *;
+@use 'theme' as *;
+
+.btn-primary {
+  padding: rem(16px) rem(32px);
+  font-size: rem(16px);
+  font-weight: 600;
+  line-height: 100%;
+  color: $pink;
+  font-family: 'Atyp BL Text', sans-serif;
+  border: 1px solid rgba(246, 122, 203, 0.55);
+  border-radius: 8px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    color: $white;
+    background-color: $pink;
+  }
+}

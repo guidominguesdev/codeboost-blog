@@ -1,0 +1,86 @@
+@mixin flex($align: null, $justify: null) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $align == null and $justify == null {
+    display: flex;
+  }
+  @if $align != null {
+    align-items: $align;
+  }
+  @if $justify != null {
+    justify-content: $justify;
+  }
+}
+
+@mixin flex-col($align: null, $justify: null) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $align == null and $justify == null {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @if $align != null {
+    align-items: $align;
+  }
+
+  @if $justify != null {
+    justify-content: $justify;
+  }
+}
+
+@mixin flex-col-reverse($align: null, $justify: null) {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: $align;
+  justify-content: $justify;
+
+  @if $align == null and $justify == null {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @if $align != null {
+    align-items: $align;
+  }
+
+  @if $justify != null {
+    justify-content: $justify;
+  }
+}
+
+@mixin py($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin px($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin my($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin mx($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin size($width, $height: false) {
+  $size: $width;
+  @if $height == false {
+    width: $size;
+    height: $size;
+  } @else if $height != false {
+    width: $width;
+    height: $height;
+  }
+}
